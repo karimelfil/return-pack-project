@@ -1,0 +1,31 @@
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('customer/', create_customer),
+    path('supplier/', create_supplier),
+    path('category/', create_category),
+    path('supplier/list/', list_supplier),  
+    path('supplier/<int:supplier_id>/', search_supplier),
+    path('customers/<int:customer_id>/', search_customer),
+    path('packaging/', list_packaging),
+    path('stock/', list_stock),
+    path('/customer/list/', list_customer),  
+    path('packaging/returnable/count/', list_returnable_packaging),
+    path('stock/company/', list_company_stock),
+    path('customer/orders/<int:customer_id>/', history_customer_orders),
+    path('packaging/returnable/stock/increase/', increase_stock_quantity_on_return),
+    path('shipment/', list_shipments),
+    path("supplier/<int:supplier_id>/", get_supplier),
+    path("category/<int:category_id>/", get_category),
+    path("warehouse/<int:warehouse_id>/", get_warehouse),
+    path("item/<int:item_id>/", get_item),
+    path("sales/<int:sales_id>/", get_sales),
+    path("purchase/<int:purchase_id>/", get_purchase),
+    path("payment/<int:payment_id>/", get_payment),
+    path("packaging/<int:packaging_id>/", get_packaging),
+    path("packagingmouvment/<int:packagingmouvment_id>/", get_packagingmouvment),
+    path("stock/<int:stock_id>/", get_stock),
+    path("orders/<int:order_id>/", get_order),
+    path("shipment/<int:shipment_id>/", get_shipment),
+]
